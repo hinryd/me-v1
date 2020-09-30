@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import s from './ProfileCard.module.css';
 
 export default function Card({ user }) {
@@ -12,6 +12,9 @@ export default function Card({ user }) {
         <p className={s.bio}>{user.bio}</p>
         <a className={s.social_link} href={user.html_url}>
           <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a className={s.social_link} href='https://twitter.com/rehnyx'>
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
       </div>
     </div>

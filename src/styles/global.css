@@ -5,3 +5,14 @@ body {
   min-height: 100vh;
   background-color: #eee;
 }
+
+h1,
+h2,
+h3,
+p {
+  color: #222831;
+}
+
+h3 {
+  color: rgb(196, 105, 21);
+}
