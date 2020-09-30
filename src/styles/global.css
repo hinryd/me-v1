@@ -3,4 +3,5 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: relative;
   min-height: 100vh;
+  background-color: #eee;
 }
