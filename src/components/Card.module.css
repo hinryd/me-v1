@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: solid;
+  border-width: 1px;
+  border-color: grey;
+  border-radius: 7px;
+  height: 100px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container:hover {
+  transform: scale(1.025);
+}
+
+.image {
+  flex-grow: 0;
+  height: 100px;
+  width: 75px;
+  border-radius: 7px 0 0 7px;
+}
+
+.text_container {
+  flex-grow: 1;
+  flex-basis: 100px;
+  overflow: hidden;
+  margin: 5rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+}

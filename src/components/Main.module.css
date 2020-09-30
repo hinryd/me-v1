@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 768px;
+  padding-bottom: 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 95%;
+  }
+}
+
+.title {
+  border-width: 5px;
+  border-top-width: 5px;
+  border-color: black;
+}
