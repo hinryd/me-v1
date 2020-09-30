@@ -20,8 +20,10 @@
 .bio,
 .social_link {
   margin: 4px 0;
+  font-size: 1.1rem;
 }
 
 .social_link {
   font-size: 2.5rem;
+  margin-right: 5px;
 }
