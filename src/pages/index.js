@@ -34,7 +34,7 @@ export default function index({ repos, posts, user }) {
         <h2 className={styles.title}>Me</h2>
         <ProfileCard user={user} />
 
-        <h2 className={styles.title}>Work</h2>
+        <h2 className={styles.title}>Recent</h2>
         <Grid>
           {repos
             .sort((a, b) => {
