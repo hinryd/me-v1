@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import s from './ProfileCard.module.css';
 
+const twitterUsername = process.env.TWITTER_USERNAME;
+
 export default function Card({ user }) {
   return (
     <div className={s.card_container}>
@@ -13,7 +15,10 @@ export default function Card({ user }) {
         <a className={s.social_link} href={user.html_url}>
           <FontAwesomeIcon icon={faGithub} />
         </a>
-        <a className={s.social_link} href='https://twitter.com/rehnyx'>
+        <a
+          className={s.social_link}
+          href={`https://twitter.com/${twitterUsername}`}
+        >
           <FontAwesomeIcon icon={faTwitter} />
         </a>
       </div>
