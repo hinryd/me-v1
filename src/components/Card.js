@@ -8,7 +8,7 @@ export default function Card({ url, title, desc }) {
   useEffect(() => {
     url && (cardRef.current.href = url);
     switch (title) {
-      case 'me-v1':
+      case 'v1':
         setCustomTags(['nextjs', 'html', 'react', 'javascript']);
         break;
       case 'drawing-canvas':
