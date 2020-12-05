@@ -1,11 +1,10 @@
-import Head from 'next/head';
-import Footer from '../components/Footer';
-import ProfileCard from '../components/ProfileCard';
-import Grid from '../components/Grid';
-import CardPrinter from '../components/CardPrinter';
-import { getUserGithubInfo, getUserGithubPublicRepos } from '../lib/github';
-import { getUserDevtoPublicPosts } from '../lib/devto';
-import styles from '../styles/index.module.css';
+import Head from "next/head";
+import Footer from "../components/Footer";
+import ProfileCard from "../components/ProfileCard";
+import Grid from "../components/Grid";
+import Card from "../components/Card";
+import { getUserGithubInfo, getUserGithubPublicRepos } from "../lib/github";
+import { getUserDevtoPublicPosts } from "../lib/devto";
 
 export async function getServerSideProps() {
   const githubInfo = await getUserGithubInfo();
@@ -21,42 +20,55 @@ export async function getServerSideProps() {
 }
 
 export default function index({ githubInfo, githubRepos, devtoPosts }) {
-  const githubConfig = {
-    sortBy: 'pushed_at',
-    link: 'homepage',
-    title: 'name',
-    desc: 'description',
-  };
-
-  const devtoConfig = {
-    sortBy: 'published_at',
-    link: 'url',
-    title: 'title',
-    desc: 'description',
-  };
-
   return (
     <>
       <Head>
         <title>@hinryd</title>
       </Head>
 
-      <main className={styles.main}>
-        <h2 className={styles.title}>Me</h2>
+      <main className="flex flex-col mx-auto w-11/12 max-w-screen-md">
+        <h2 className="font-serif font-bold text-6xl my-4">Me</h2>
         <ProfileCard user={githubInfo} />
 
-        <h2 className={styles.title}>Work</h2>
+        <h2 className="font-serif font-bold text-6xl my-4">Work</h2>
         <Grid>
-          <CardPrinter arr={githubRepos} config={githubConfig} />
+          {githubRepos
+            .filter((repo) => repo.homepage)
+            .map((repo) => {
+              return (
+                <Card
+                  key={repo.id}
+                  url={repo.homepage}
+                  title={repo.name}
+                  desc={repo.description}
+                  tags={[]}
+                />
+              );
+            })}
         </Grid>
 
-        <h2 className={styles.title}>Blog</h2>
+        <h2 className="font-serif font-bold text-6xl my-4">Blog</h2>
         <Grid>
-          <CardPrinter arr={devtoPosts} config={devtoConfig} />
+          {devtoPosts
+            .sort((a, b) => {
+              return a.published_at < b.published_at ? 1 : -1;
+            })
+            .slice(0, 4)
+            .map((post) => {
+              return (
+                <Card
+                  key={post.id}
+                  url={post.url}
+                  title={post.title}
+                  desc={post.description}
+                  tags={post.tag_list}
+                />
+              );
+            })}
         </Grid>
+
+        <Footer />
       </main>
-
-      <Footer />
     </>
   );
 }

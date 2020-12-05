@@ -1,6 +1,6 @@
 {
-  "name": "me",
-  "version": "0.1.0",
+  "name": "v1",
+  "version": "1.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,12 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "next": "^10.0.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
-    "next": "^9.5.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "framer-motion": "^2.9.5",
+    "tailwindcss": "^2.0.1"
   }
 }

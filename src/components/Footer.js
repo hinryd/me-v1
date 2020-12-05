@@ -1,12 +1,11 @@
-import s from './Footer.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
-    <div className={s.footer}>
-      <p className={s.text}>
-        Copyright <FontAwesomeIcon icon={faCopyright} size='xs' /> 2020
+    <div className="w-full bg-green-waves mt-12">
+      <p className="font-bold text-lg text-center">
+        Copyright <FontAwesomeIcon icon={faCopyright} /> 2020
       </p>
     </div>
   );
