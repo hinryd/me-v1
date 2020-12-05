@@ -7,8 +7,12 @@ export default function Card({ url, title, desc, tags }) {
       <article className="flex flex-col justify-between m-3 h-28 w-34">
         <div>
           <h3 className="font-bold truncate">{title}</h3>
-          {tags.map((tag) => {
-            return <span className="bg-green-200 p-1 mr-2 rounded">{tag}</span>;
+          {tags.map((tag, ind) => {
+            return (
+              <span key={ind} className="bg-green-200 p-1 mr-2 rounded">
+                {tag}
+              </span>
+            );
           })}
         </div>
         <figcaption className="truncate">{desc}</figcaption>
