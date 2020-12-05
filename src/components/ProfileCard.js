@@ -5,7 +5,7 @@ const twitterUsername = process.env.TWITTER_USERNAME;
 
 export default function Card({ user }) {
   return (
-    <div className="flex flex-row h-40">
+    <div className="flex flex-row h-36">
       <img className="shadow-2xl rounded-full mr-4" src={user.avatar_url} />
 
       <div className="my-auto">

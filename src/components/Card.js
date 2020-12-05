@@ -4,7 +4,7 @@ export default function Card({ url, title, desc, tags }) {
       href={url}
       className="bg-white shadow-xl rounded-xl transform hover:scale-105"
     >
-      <article className="flex flex-col justify-between m-3 h-24 w-34">
+      <article className="flex flex-col justify-between m-3 h-28 w-34">
         <div>
           <h3 className="font-bold truncate">{title}</h3>
           {tags.map((tag) => {
