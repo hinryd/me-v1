@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import ProfileCard from "../components/ProfileCard";
+import Heading from "../components/Heading";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
 import { getUserGithubInfo, getUserGithubPublicRepos } from "../lib/github";
@@ -27,10 +28,10 @@ export default function index({ githubInfo, githubRepos, devtoPosts }) {
       </Head>
 
       <main className="flex flex-col mx-auto w-11/12 max-w-screen-md">
-        <h2 className="font-serif font-bold text-6xl my-4">Me</h2>
+        <Heading>Me</Heading>
         <ProfileCard user={githubInfo} />
 
-        <h2 className="font-serif font-bold text-6xl my-4">Work</h2>
+        <Heading>Work</Heading>
         <Grid>
           {githubRepos
             .filter((repo) => repo.homepage)
@@ -47,7 +48,7 @@ export default function index({ githubInfo, githubRepos, devtoPosts }) {
             })}
         </Grid>
 
-        <h2 className="font-serif font-bold text-6xl my-4">Blog</h2>
+        <Heading>Blog</Heading>
         <Grid>
           {devtoPosts
             .sort((a, b) => {
