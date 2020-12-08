@@ -11,7 +11,7 @@ export default function Card({ url, title, desc, tags }) {
             return (
               <span
                 key={ind}
-                className="bg-green-100 p-1 mr-2 rounded font-serif text-xs"
+                className="bg-green-100 p-1 mr-1 rounded font-serif text-xs"
               >
                 {tag}
               </span>

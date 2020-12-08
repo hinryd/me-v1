@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faTwitter, faDev } from "@fortawesome/free-brands-svg-icons";
 
 const twitterUsername = process.env.TWITTER_USERNAME;
+const devtoUsername = process.env.DEVTO_USERNAME;
 
 export default function Card({ user }) {
   return (
@@ -22,6 +23,12 @@ export default function Card({ user }) {
           href={`https://twitter.com/${twitterUsername}`}
         >
           <FontAwesomeIcon className="animate-pulse" icon={faTwitter} />
+        </a>
+        <a
+          className="text-red-500 text-3xl mr-2"
+          href={`https://dev.to/${devtoUsername}`}
+        >
+          <FontAwesomeIcon className="animate-pulse" icon={faDev} />
         </a>
       </div>
     </div>
