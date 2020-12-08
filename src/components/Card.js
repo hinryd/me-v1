@@ -9,7 +9,10 @@ export default function Card({ url, title, desc, tags }) {
           <h3 className="font-bold text-lg truncate">{title}</h3>
           {tags.map((tag, ind) => {
             return (
-              <span key={ind} className="bg-green-100 p-1 mr-2 rounded">
+              <span
+                key={ind}
+                className="bg-green-100 p-1 mr-2 rounded font-serif text-xs"
+              >
                 {tag}
               </span>
             );
